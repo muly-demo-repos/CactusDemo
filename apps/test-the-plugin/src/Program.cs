@@ -1,9 +1,6 @@
 using System.Reflection;
-using Microsoft.EntityFrameworkCore;
 using TestThePlugin;
 using TestThePlugin.APIs;
-using TestThePlugin.Brokers.Kafka;
-using TestThePlugin.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -31,10 +28,6 @@ builder.Services.AddCors(builder =>
     );
 });
 builder.Services.AddApiAuthentication();
-builder.AddKafka();
-builder.Services.AddDbContext<TestThePluginDbContext>(opt =>
-    opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
-);
 var app = builder.Build();
 
 app.UseCors();
