@@ -9,10 +9,10 @@ public static class CustomersExtensions
     {
         return new Customer
         {
-            Id = model.Id,
             CreatedAt = model.CreatedAt,
-            UpdatedAt = model.UpdatedAt,
+            Id = model.Id,
             Name = model.Name,
+            UpdatedAt = model.UpdatedAt,
         };
     }
 
