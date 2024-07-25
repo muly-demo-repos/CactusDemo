@@ -1,6 +1,7 @@
 import { Module } from "@nestjs/common";
 import { UserModule } from "./user/user.module";
 import { MyEntItyModule } from "./myEntIty/myEntIty.module";
+import { MYweirDcaPitaliZAtiOnModule } from "./myweirdcapitalization/myweirdcapitalization.module";
 import { HealthModule } from "./health/health.module";
 import { PrismaModule } from "./prisma/prisma.module";
 import { SecretsManagerModule } from "./providers/secrets/secretsManager.module";
@@ -22,6 +23,7 @@ import { AuthModule } from "./auth/auth.module";
     KafkaModule,
     UserModule,
     MyEntItyModule,
+    MYweirDcaPitaliZAtiOnModule,
     HealthModule,
     PrismaModule,
     SecretsManagerModule,
