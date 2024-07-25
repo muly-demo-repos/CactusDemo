@@ -1,5 +1,5 @@
 import * as graphql from "@nestjs/graphql";
-import { MYweirDcaPitaliZAtiOnService } from "../myweirdcapitalization/myweirdcapitalization.service";
+import { MYweirDcaPitaliZAtiOnService } from "./myweirdcapitalization.service";
 
 export class MYweirDcaPitaliZAtiOnResolver {
   constructor(protected readonly service: MYweirDcaPitaliZAtiOnService) {}
