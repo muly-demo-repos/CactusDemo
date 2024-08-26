@@ -62,7 +62,6 @@ using (var scope = app.Services.CreateScope())
     var services = scope.ServiceProvider;
     await RolesManager.SyncRoles(services, app.Configuration);
 }
-
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
