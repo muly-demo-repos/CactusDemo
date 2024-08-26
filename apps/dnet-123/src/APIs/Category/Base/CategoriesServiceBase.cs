@@ -127,9 +127,7 @@ public abstract class CategoriesServiceBase : ICategoriesService
         if (updateDto.Products != null)
         {
             category.Products = await _context
-                .Products.Where(product =>
-                    updateDto.Products.Select(t => t.Id).Contains(product.Id)
-                )
+                .Products.Where(product => updateDto.Products.Select(t => t).Contains(product.Id))
                 .ToListAsync();
         }
 
