@@ -132,14 +132,14 @@ public abstract class OrderItemsServiceBase : IOrderItemsService
         if (updateDto.Order != null)
         {
             orderItem.Order = await _context
-                .Orders.Where(order => updateDto.Order.Id == order.Id)
+                .Orders.Where(order => updateDto.Order == order.Id)
                 .FirstOrDefaultAsync();
         }
 
         if (updateDto.Product != null)
         {
             orderItem.Product = await _context
-                .Products.Where(product => updateDto.Product.Id == product.Id)
+                .Products.Where(product => updateDto.Product == product.Id)
                 .FirstOrDefaultAsync();
         }
 

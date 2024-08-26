@@ -131,7 +131,7 @@ public abstract class OrdersServiceBase : IOrdersService
         if (updateDto.Customer != null)
         {
             order.Customer = await _context
-                .Customers.Where(customer => updateDto.Customer.Id == customer.Id)
+                .Customers.Where(customer => updateDto.Customer == customer.Id)
                 .FirstOrDefaultAsync();
         }
 
@@ -139,7 +139,7 @@ public abstract class OrdersServiceBase : IOrdersService
         {
             order.OrderItems = await _context
                 .OrderItems.Where(orderItem =>
-                    updateDto.OrderItems.Select(t => t.Id).Contains(orderItem.Id)
+                    updateDto.OrderItems.Select(t => t).Contains(orderItem.Id)
                 )
                 .ToListAsync();
         }

@@ -133,7 +133,7 @@ public abstract class ProductsServiceBase : IProductsService
         if (updateDto.Category != null)
         {
             product.Category = await _context
-                .Categories.Where(category => updateDto.Category.Id == category.Id)
+                .Categories.Where(category => updateDto.Category == category.Id)
                 .FirstOrDefaultAsync();
         }
 
@@ -141,7 +141,7 @@ public abstract class ProductsServiceBase : IProductsService
         {
             product.OrderItems = await _context
                 .OrderItems.Where(orderItem =>
-                    updateDto.OrderItems.Select(t => t.Id).Contains(orderItem.Id)
+                    updateDto.OrderItems.Select(t => t).Contains(orderItem.Id)
                 )
                 .ToListAsync();
         }

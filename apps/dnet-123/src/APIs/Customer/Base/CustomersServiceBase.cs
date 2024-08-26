@@ -127,7 +127,7 @@ public abstract class CustomersServiceBase : ICustomersService
         if (updateDto.Orders != null)
         {
             customer.Orders = await _context
-                .Orders.Where(order => updateDto.Orders.Select(t => t.Id).Contains(order.Id))
+                .Orders.Where(order => updateDto.Orders.Select(t => t).Contains(order.Id))
                 .ToListAsync();
         }
 
