@@ -18,3 +18,21 @@ model User {
   updatedAt DateTime @updatedAt
   username  String   @unique
 }
+
+model Abc {
+  createdAt DateTime @default(now())
+  def       Def?     @relation(name: "AbcsOnDef", fields: [defId], references: [id])
+  defId     String?
+  defs      Def[]    @relation(name: "AbcOnDefs")
+  id        String   @id @default(cuid())
+  updatedAt DateTime @updatedAt
+}
+
+model Def {
+  abc       Abc?     @relation(name: "AbcOnDefs", fields: [abcId], references: [id])
+  abcId     String?
+  abcs      Abc[]    @relation(name: "AbcsOnDef")
+  createdAt DateTime @default(now())
+  id        String   @id @default(cuid())
+  updatedAt DateTime @updatedAt
+}
