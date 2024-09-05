@@ -1,14 +1,15 @@
-using NetKafka.Brokers.Infrastructure;
 using System.Threading.Tasks;
+using NetKafka.Brokers.Infrastructure;
 
 namespace NetKafka.Brokers.Mymessagebroker;
 
 public class MymessagebrokerMessageHandlersController
 {
-    [Topic("t.1")]
-    public Task Handlet.1(string message) {
-        //set your message handling logic here 
-        
-      return Task.CompletedTask;}
+    [Topic("topicNewName")]
+    public Task HandletopicNewName(string message)
+    {
+        //set your message handling logic here
 
+        return Task.CompletedTask;
+    }
 }
