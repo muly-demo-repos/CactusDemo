@@ -5,8 +5,8 @@ namespace NetKafka.Brokers.Mymessagebroker;
 
 public class MymessagebrokerMessageHandlersController
 {
-    [Topic("topicNewName")]
-    public Task HandletopicNewName(string message)
+    [Topic("event.fired")]
+    public Task HandleEventFired(string message)
     {
         //set your message handling logic here
 

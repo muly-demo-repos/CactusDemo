@@ -1,4 +1,3 @@
-using DotnetService.Brokers.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 using NetKafka.Brokers.Infrastructure;
 using NetKafka.Brokers.Mymessagebroker;
